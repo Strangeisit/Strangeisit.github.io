@@ -891,7 +891,87 @@ const PHAs = [
     { full_name: '712200 (2014 SM143)', a: 1.206, e: 0.4226, i: 24.21, ma: 153.82, w: 89.64, om: 28.81, per_y: 1.32 } ,
     { full_name: '719194 (2018 PL23)', a: 1.567, e: 0.7870, i: 14.35, ma: 341.87, w: 293.68, om: 178.29, per_y: 1.96 } 
 ];
- 
+
+const NECs=[
+    { full_name: '    1P/Halley', a: 17.93, e: 0.9679, i: 162.20, ma: 274.81, w: 112.21, om: 59.07, per_y: 75.9 } ,
+    { full_name: '    2P/Encke', a: 2.22, e: 0.8484, i: 11.48, ma: 219.12, w: 187.03, om: 334.29, per_y: 3.31 } ,
+    { full_name: '    3D/Biela', a: 3.535, e: 0.7513, i: 13.22, ma: 0.95, w: 221.66, om: 250.67, per_y: 6.65 } ,
+    { full_name: '    5D/Brorsen', a: 3.101, e: 0.8098, i: 29.38, ma: 0.17, w: 14.95, om: 102.97, per_y: 5.46 } ,
+    { full_name: '    7P/Pons-Winnecke', a: 3.419, e: 0.6376, i: 22.33, ma: 13.17, w: 172.51, om: 93.42, per_y: 6.32 } ,
+    { full_name: '    8P/Tuttle', a: 5.7, e: 0.8198, i: 54.98, ma: 15.13, w: 207.51, om: 270.34, per_y: 13.6 } ,
+    { full_name: '   12P/Pons-Brooks', a: 17.18, e: 0.9546, i: 74.19, ma: 357.07, w: 198.99, om: 255.86, per_y: 71.2 } ,
+    { full_name: '   13P/Olbers', a: 16.66, e: 0.9298, i: 44.63, ma: 337.34, w: 64.58, om: 85.84, per_y: 68 } ,
+    { full_name: '   15P/Finlay', a: 3.49, e: 0.7202, i: 6.80, ma: 46.69, w: 347.63, om: 13.75, per_y: 6.52 } ,
+    { full_name: '   18D/Perrine-Mrkos', a: 3.56, e: 0.6426, i: 17.76, ma: 11.51, w: 166.05, om: 240.88, per_y: 6.72 } ,
+    { full_name: '   20D/Westphal', a: 15.64, e: 0.9198, i: 40.89, ma: 359.72, w: 57.08, om: 348.01, per_y: 61.9 } ,
+    { full_name: '   21P/Giacobini-Zinner', a: 3.5, e: 0.7105, i: 32.00, ma: 313.91, w: 172.81, om: 195.40, per_y: 6.55 } ,
+    { full_name: '   23P/Brorsen-Metcalf', a: 17.07, e: 0.9720, i: 19.33, ma: 0.27, w: 129.61, om: 311.59, per_y: 70.5 } ,
+    { full_name: '   24P/Schaumasse', a: 4.086, e: 0.7048, i: 11.73, ma: 273.65, w: 58.00, om: 79.67, per_y: 8.26 } ,
+    { full_name: '   26P/Grigg-Skjellerup', a: 3.027, e: 0.6391, i: 22.47, ma: 261.15, w: 1.80, om: 211.66, per_y: 5.27 } ,
+    { full_name: '   27P/Crommelin', a: 9.093, e: 0.9193, i: 29.22, ma: 241.87, w: 195.96, om: 250.96, per_y: 27.4 } ,
+    { full_name: '   34D/Gale', a: 4.944, e: 0.7607, i: 11.73, ma: 1.12, w: 209.16, om: 67.92, per_y: 11 } ,
+    { full_name: '   35P/Herschel-Rigollet', a: 28.84, e: 0.9740, i: 64.21, ma: 359.97, w: 29.30, om: 355.98, per_y: 155 } ,
+    { full_name: '   41P/Tuttle-Giacobini-Kresak', a: 3.085, e: 0.6613, i: 9.23, ma: 0.23, w: 62.17, om: 141.06, per_y: 5.42 } ,
+    { full_name: '   45P/Honda-Mrkos-Pajdusakova', a: 3.026, e: 0.8240, i: 4.25, ma: 42.26, w: 326.34, om: 88.93, per_y: 5.26 } ,
+    { full_name: '   46P/Wirtanen', a: 3.093, e: 0.6588, i: 11.75, ma: 0.01, w: 356.34, om: 82.16, per_y: 5.44 } ,
+    { full_name: '   55P/Tempel-Tuttle', a: 10.34, e: 0.9056, i: 162.49, ma: 4.98, w: 172.50, om: 235.27, per_y: 33.2 } ,
+    { full_name: '   66P/du Toit', a: 6.023, e: 0.7866, i: 18.67, ma: 273.48, w: 257.34, om: 22.00, per_y: 14.8 } ,
+    { full_name: '   67P/Churyumov-Gerasimenko', a: 3.462, e: 0.6409, i: 7.04, ma: 8.86, w: 12.80, om: 50.14, per_y: 6.44 } ,
+    { full_name: '   72P/Denning-Fujikawa', a: 4.347, e: 0.8205, i: 9.23, ma: 47.38, w: 338.47, om: 35.44, per_y: 9.06 } ,
+    { full_name: '   73P/Schwassmann-Wachmann 3', a: 3.091, e: 0.6855, i: 11.24, ma: 354.77, w: 199.39, om: 69.66, per_y: 5.44 } ,
+    { full_name: '   79P/du Toit-Hartley', a: 3.031, e: 0.5941, i: 2.89, ma: 318.28, w: 253.27, om: 307.84, per_y: 5.28 } ,
+    { full_name: '   85D/Boethin', a: 5.185, e: 0.7812, i: 4.30, ma: 313.19, w: 37.62, om: 359.40, per_y: 11.8 } ,
+    { full_name: '   96P/Machholz 1', a: 3.035, e: 0.9592, i: 58.14, ma: 340.99, w: 14.79, om: 94.25, per_y: 5.29 } ,
+    { full_name: '  103P/Hartley 2', a: 3.475, e: 0.6938, i: 13.61, ma: 347.29, w: 181.30, om: 219.75, per_y: 6.48 } ,
+    { full_name: '  104P/Kowal 2', a: 3.208, e: 0.6655, i: 5.70, ma: 342.05, w: 227.25, om: 207.21, per_y: 5.74 } ,
+    { full_name: '  109P/Swift-Tuttle', a: 26.09, e: 0.9632, i: 113.45, ma: 7.63, w: 152.98, om: 139.38, per_y: 133 } ,
+    { full_name: '  122P/de Vico', a: 17.68, e: 0.9627, i: 85.38, ma: 3.77, w: 13.00, om: 79.62, per_y: 74.3 } ,
+    { full_name: '  141P/Machholz 2', a: 3.055, e: 0.7367, i: 13.98, ma: 267.16, w: 153.62, om: 241.88, per_y: 5.34 } ,
+    { full_name: '  157P/Tritton', a: 3.368, e: 0.6275, i: 11.18, ma: 213.80, w: 157.44, om: 289.43, per_y: 6.18 } ,
+    { full_name: '  161P/Hartley-IRAS', a: 7.73, e: 0.8351, i: 95.70, ma: 343.87, w: 47.09, om: 1.40, per_y: 21.5 } ,
+    { full_name: '  162P/Siding Spring', a: 3.053, e: 0.5961, i: 27.82, ma: 42.97, w: 356.32, om: 31.24, per_y: 5.33 } ,
+    { full_name: '  169P/NEAT', a: 2.606, e: 0.7668, i: 11.30, ma: 341.65, w: 217.96, om: 176.19, per_y: 4.21 } ,
+    { full_name: '  177P/Barnard', a: 24.3, e: 0.9544, i: 31.22, ma: 358.96, w: 60.45, om: 272.07, per_y: 120 } ,
+    { full_name: '  181P/Shoemaker-Levy 6', a: 3.839, e: 0.7073, i: 16.98, ma: 11.75, w: 333.80, om: 37.68, per_y: 7.52 } ,
+    { full_name: '  182P/LONEOS', a: 2.931, e: 0.6663, i: 16.91, ma: 184.06, w: 51.43, om: 75.10, per_y: 5.02 } ,
+    { full_name: '  185P/Petriew', a: 3.1, e: 0.6988, i: 14.00, ma: 176.38, w: 181.94, om: 214.10, per_y: 5.46 } ,
+    { full_name: '  189P/NEAT', a: 2.918, e: 0.5976, i: 20.40, ma: 98.30, w: 15.31, om: 282.20, per_y: 4.98 } ,
+    { full_name: '  197P/LINEAR', a: 2.867, e: 0.6299, i: 25.56, ma: 238.00, w: 188.75, om: 66.40, per_y: 4.86 } ,
+    { full_name: '  206P/Barnard-Boattini', a: 3.234, e: 0.6485, i: 33.20, ma: 217.44, w: 181.36, om: 204.38, per_y: 5.81 } ,
+    { full_name: '  207P/NEAT', a: 3.872, e: 0.7591, i: 10.19, ma: 248.36, w: 273.00, om: 198.34, per_y: 7.62 } ,
+    { full_name: '  209P/LINEAR', a: 2.949, e: 0.6819, i: 21.33, ma: 224.42, w: 152.64, om: 62.88, per_y: 5.06 } ,
+    { full_name: '  210P/Christensen', a: 3.176, e: 0.8317, i: 10.22, ma: 71.41, w: 345.77, om: 93.87, per_y: 5.66 } ,
+    { full_name: '  217P/LINEAR', a: 3.944, e: 0.6896, i: 12.88, ma: 44.92, w: 246.77, om: 125.62, per_y: 7.83 } ,
+    { full_name: '  222P/LINEAR', a: 2.857, e: 0.7268, i: 5.15, ma: 267.12, w: 345.43, om: 7.13, per_y: 4.83 } ,
+    { full_name: '  249P/LINEAR', a: 2.77, e: 0.8187, i: 8.40, ma: 255.31, w: 64.81, om: 239.85, per_y: 4.61 } ,
+    { full_name: '  252P/LINEAR', a: 3.047, e: 0.6731, i: 10.42, ma: 16.63, w: 343.31, om: 190.95, per_y: 5.32 } ,
+    { full_name: '  255P/Levy', a: 3.025, e: 0.6720, i: 18.33, ma: 82.56, w: 179.59, om: 279.78, per_y: 5.26 } ,
+    { full_name: '  262P/McNaught-Russell', a: 6.935, e: 0.8154, i: 29.08, ma: 341.30, w: 171.17, om: 218.01, per_y: 18.3 } ,
+    { full_name: '  263P/Gibbs', a: 3.06, e: 0.5878, i: 11.54, ma: 71.27, w: 34.57, om: 105.81, per_y: 5.35 } ,
+    { full_name: '  273P/Pons-Gambart', a: 32.83, e: 0.9753, i: 136.40, ma: 0.46, w: 20.19, om: 320.43, per_y: 188 } ,
+    { full_name: '  289P/Blanpain', a: 3.045, e: 0.6851, i: 5.90, ma: 342.94, w: 9.85, om: 68.92, per_y: 5.31 } ,
+    { full_name: '  294P/LINEAR', a: 3.194, e: 0.5986, i: 18.54, ma: 141.45, w: 234.17, om: 314.34, per_y: 5.71 } ,
+    { full_name: '  300P/Catalina', a: 2.699, e: 0.6916, i: 5.68, ma: 292.86, w: 222.87, om: 95.69, per_y: 4.43 } ,
+    { full_name: '  306P/LINEAR', a: 3.104, e: 0.5983, i: 8.36, ma: 96.98, w: 0.77, om: 341.50, per_y: 5.47 } ,
+    { full_name: '  317P/WISE', a: 2.957, e: 0.5802, i: 11.96, ma: 203.07, w: 334.74, om: 275.69, per_y: 5.08 } ,
+    { full_name: '  319P/Catalina-McNaught', a: 3.573, e: 0.6650, i: 15.07, ma: 263.69, w: 203.68, om: 111.37, per_y: 6.75 } ,
+    { full_name: '  320P/McNaught', a: 3.103, e: 0.6824, i: 4.89, ma: 73.92, w: 0.67, om: 295.96, per_y: 5.47 } ,
+    { full_name: '  321P/SOHO', a: 2.427, e: 0.9807, i: 19.74, ma: 28.99, w: 172.41, om: 165.27, per_y: 3.78 } ,
+    { full_name: '  322P/SOHO', a: 2.516, e: 0.9787, i: 12.59, ma: 337.76, w: 49.05, om: 359.52, per_y: 3.99 } ,
+    { full_name: '  323P/SOHO', a: 2.582, e: 0.9848, i: 5.37, ma: 6.50, w: 353.17, om: 324.23, per_y: 4.15 } ,
+    { full_name: '  325P/Yang-Gao', a: 3.406, e: 0.6243, i: 16.33, ma: 157.54, w: 347.00, om: 258.85, per_y: 6.29 } ,
+    { full_name: '  333P/LINEAR', a: 4.223, e: 0.7360, i: 131.88, ma: 324.92, w: 26.15, om: 115.56, per_y: 8.68 } ,
+    { full_name: '  342P/SOHO', a: 3.043, e: 0.9826, i: 13.27, ma: 5.45, w: 58.70, om: 43.40, per_y: 5.31 } ,
+    { full_name: '  364P/PANSTARRS', a: 2.878, e: 0.7226, i: 12.15, ma: 122.02, w: 211.97, om: 46.22, per_y: 4.88 } ,
+    { full_name: '  384P/Kowalski', a: 2.907, e: 0.6154, i: 7.28, ma: 279.20, w: 37.38, om: 354.39, per_y: 4.96 } ,
+    { full_name: '  387P/Boattini', a: 4.799, e: 0.7360, i: 8.90, ma: 208.93, w: 162.78, om: 259.36, per_y: 10.5 } ,
+    { full_name: '  405P/Lemmon', a: 3.607, e: 0.6891, i: 9.37, ma: 199.34, w: 112.29, om: 3.31, per_y: 6.85 } ,
+    { full_name: '  414P/STEREO', a: 2.795, e: 0.8117, i: 23.38, ma: 357.81, w: 210.74, om: 257.79, per_y: 4.67 } ,
+    { full_name: '  460P/PANSTARRS', a: 3.022, e: 0.6663, i: 18.92, ma: 6.09, w: 351.90, om: 180.53, per_y: 5.25 } ,
+    { full_name: '  463P/NEOWISE', a: 2.976, e: 0.8253, i: 29.44, ma: 244.87, w: 215.91, om: 283.72, per_y: 5.13 } ,
+    { full_name: '  479P/Elenin', a: 5.62, e: 0.7786, i: 15.39, ma: 328.31, w: 263.49, om: 295.85, per_y: 13.3 } ;
+]
+
 // Function to calculate the position using the elliptical orbit formula
 function ellipticalOrbit(a, e, i, om, w, ma) {
     const toRadians = degrees => degrees * (Math.PI / 180);
@@ -947,6 +1027,21 @@ const PHAMeshes = PHAs.map(PHA => {
     scene.add(label);
 
     return { mesh, ...PHA, label };
+});
+
+const NECMeshes = NECs.map(NEC => {
+    const geometry = new THREE.SphereGeometry(0.004, 16, 16);
+    const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+
+    createOrbitPath(NEC.a, NEC.e, NEC.i, NEC.w, NEC.om, 0xffffff);
+
+    const label = createLabel(NEC.full_name, new THREE.Vector3(NEC.a, 0, 0));
+    label.position.z += 0.1; // Offset for visibility
+    scene.add(label);
+
+    return { mesh, ...NEC, label };
 });
 
 // Helper function to create orbit path
@@ -1083,6 +1178,13 @@ function animate() {
     });
 
     planetMeshes.forEach(({ mesh, a, e, per_y, i, w, om, label }) => {
+        const ma = (2 * Math.PI * time) / per_y;
+        const { x, y, z } = ellipticalOrbit(a, e, i, om, w, ma * (180 / Math.PI));
+        mesh.position.set(x, y, z);
+        label.position.set(x, y, z);
+    });
+
+    NECMeshes.forEach(({ mesh, a, e, per_y, i, w, om, label }) => {
         const ma = (2 * Math.PI * time) / per_y;
         const { x, y, z } = ellipticalOrbit(a, e, i, om, w, ma * (180 / Math.PI));
         mesh.position.set(x, y, z);
